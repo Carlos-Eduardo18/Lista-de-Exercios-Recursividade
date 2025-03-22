@@ -1,0 +1,20 @@
+#include <stdio.h>
+int soma_naturais(int n) {
+    if (n == 0)
+        return 0;
+    return n + soma_naturais(n - 1);
+}
+
+int main() {
+    int numero;
+    printf("Digite um número inteiro não negativo: ");
+    scanf("%d", &numero);
+    
+    if (numero < 0) {
+        printf("A soma não é definida para números negativos.\n");
+    } else {
+        printf("Soma dos primeiros %d números naturais = %d\n", numero, soma_naturais(numero));
+    }
+    
+    return 0;
+}
