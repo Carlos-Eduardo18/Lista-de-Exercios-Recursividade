@@ -1,0 +1,22 @@
+#include <stdio.h>
+long long potenciaSimples(int x, int n) {
+    if (n == 0) return 1;
+    return x * potenciaSimples(x, n - 1);
+}
+
+// Função otimizada usando divisão e conquista (O(log n))
+long long potenciaOtimizada(int x, int n) {
+    if (n == 0) return 1;
+    long long half = potenciaOtimizada(x, n / 2);
+    if (n % 2 == 0)
+        return half * half;
+    else
+        return half * half * x;
+}
+
+int main() {
+    int x = 2, n = 5;
+    printf("Potência Simples: %lld\n", potenciaSimples(x, n));
+    printf("Potência Otimizada: %lld\n", potenciaOtimizada(x, n));
+    return 0;
+}
