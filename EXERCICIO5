@@ -1,0 +1,18 @@
+#include <stdio.h>
+void contagemRegressiva(int n) {
+    if (n < 0) return;
+    printf("%d ", n);
+    contagemRegressiva(n - 1);
+}
+
+int main() {
+    int x = 2, n = 5;
+    printf("Potência Simples: %lld\n", potenciaSimples(x, n));
+    printf("Potência Otimizada: %lld\n", potenciaOtimizada(x, n));
+    
+    printf("Contagem Regressiva: ");
+    contagemRegressiva(3);
+    printf("\n");
+    
+    return 0;
+}
